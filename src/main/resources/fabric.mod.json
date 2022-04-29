@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "gud_creeper_swarm",
+  "version": "${version}",
+
+  "name": "Creeper Swarm",
+  "description": "Why have one explosion when you can have 13?",
+  "authors": [
+    "gudenau"
+  ],
+
+  "license": "CC0-1.0",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.gudenau.minecraft.creeperswarm.CreeperSwarm"
+    ]
+  },
+  "mixins": [
+    "gud_creeper_swarm.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": "*",
+    "minecraft": ">=1.17"
+  },
+  "recommends": {
+    "fabric-resource-loader": "*"
+  }
+}

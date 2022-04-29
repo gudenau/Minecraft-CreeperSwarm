@@ -1,0 +1,13 @@
+{
+  "gamerule.category.creeper_swarm": "Creeper Swarm",
+  "gamerule.creeperSwarmBabyCount": "Baby Count",
+  "gamerule.creeperSwarmBabyCount.description": "The amount of baby Creepers to spawn when an adult explodes, -1 scales based on the health of the Creeper.",
+  "gamerule.creeperSwarmExplosionScale": "Explosion Scale",
+  "gamerule.creeperSwarmExplosionScale.description": "The multiplier of the explosion size for baby Creepers as a percentage. 25 is 25%.",
+  "gamerule.creeperSwarmHardMultiplier": "Hard Multiplier",
+  "gamerule.creeperSwarmHardMultiplier.description": "Multiplies the amount of baby Creepers that spawn when the world has Hard difficulty.",
+  "gamerule.creeperSwarmSiblingRivalry": "Sibling Rivalry",
+  "gamerule.creeperSwarmSiblingRivalry.description": "Enables baby Creepers from the same parent to damage each other.",
+  "gamerule.creeperSwarmSpeedBoost": "Speed Boost",
+  "gamerule.creeperSwarmSpeedBoost.description": "Gives baby Creepers the baby speed boost."
+}
