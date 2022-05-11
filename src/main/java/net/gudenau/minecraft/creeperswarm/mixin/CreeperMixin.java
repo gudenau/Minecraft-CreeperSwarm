@@ -148,8 +148,6 @@ public abstract class CreeperMixin extends HostileEntity {
 			return;
 		}
 		
-		boolean charged = damageScale > 1;
-		
 		GameRules gameRules = world.getGameRules();
 		
 		int count = gameRules.getInt(CreeperSwarm.GameRules.BABY_COUNT);
@@ -162,18 +160,19 @@ public abstract class CreeperMixin extends HostileEntity {
 		float powerScale = 100F / gameRules.getInt(CreeperSwarm.GameRules.EXPLOSION_SCALE);
 		int explosionRadius = Math.max(MathHelper.ceil(this.explosionRadius * powerScale), 1);
 		
+		NbtCompound savedCreeper = new NbtCompound();
+		writeNbt(savedCreeper);
+		savedCreeper.remove("UUID");
+		savedCreeper.putByte("ExplosionRadius", (byte) explosionRadius);
+		
 		for(int i = 0; i < count; i++){
 			CreeperEntity creeper = new CreeperEntity(EntityType.CREEPER, world);
+			creeper.readNbt(savedCreeper);
+			
 			DataTracker tracker = creeper.getDataTracker();
 			
 			creeper.setBaby(true);
 			tracker.set(gud_PARENT, Optional.of(getUuid()));
-			((CreeperMixin)(Object)creeper).explosionRadius = explosionRadius;
-			if(charged){
-				tracker.set(CHARGED, true);
-			}
-			
-			creeper.setPosition(getPos());
 			
 			// Make them all "burst" out of the parent
 			float yaw = (creeper.getYaw() + 360F * (i / (float)count)) % 360;
