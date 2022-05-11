@@ -18,7 +18,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.explosion.Explosion;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -34,7 +33,6 @@ import java.util.UUID;
 @Mixin(CreeperEntity.class)
 public abstract class CreeperMixin extends HostileEntity {
 	@Shadow private int explosionRadius;
-	@Shadow @Final private static TrackedData<Boolean> CHARGED;
 	@Shadow protected abstract void initDataTracker();
 	@Unique private static TrackedData<Boolean> gud_BABY;
 	@Unique private static TrackedData<Optional<UUID>> gud_PARENT;
@@ -134,7 +132,6 @@ public abstract class CreeperMixin extends HostileEntity {
 		}
 	}
 	
-	@SuppressWarnings("ConstantConditions")
 	@Inject(
 		at = @At(
 			value = "INVOKE",

@@ -1,6 +1,5 @@
 package net.gudenau.minecraft.creeperswarm.mixin;
 
-import net.gudenau.minecraft.creeperswarm.CreeperSwarm;
 import net.gudenau.minecraft.creeperswarm.EnumAdder;
 import net.minecraft.world.GameRules;
 import org.spongepowered.asm.mixin.Final;
