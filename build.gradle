@@ -30,10 +30,6 @@ tasks.withType(JavaCompile).configureEach {
 	it.options.release = 8
 }
 
-java {
-	withSourcesJar()
-}
-
 jar {
 	from("LICENSE") {
 		rename { "${it}_${project.archivesBaseName}"}
